@@ -44,7 +44,7 @@
 
 **secure：**表示该cookie只能用https传输。一般用于包含认证信息的cookie，要求传输此cookie的时候，必须用https传输。
 
-**httponly：**表示此cookie必须用于http或https传输。这意味着，浏览器脚本，比如javascript中，是不允许访问操作此cookie的。
+**httponly：**这意味着，浏览器脚本，比如javascript中，是不允许访问操作此cookie的。
 
 #### cookie的域
 

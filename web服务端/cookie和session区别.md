@@ -44,6 +44,10 @@ cookie会传递消息给服务器；  session本身存放于服务器，不会�
 cookie的生命周期是累计的，从创建时，就开始计时，20分钟后，cookie生命周期结束；
 session的生命周期是间隔的，从创建时，开始计时如在20分钟，没有访问session，那么session生命周期被销毁。但是，如果在20分钟内（如在第19分钟时）访问过session，那么，将重新计算session的生命周期。关机会造成session生命周期的结束，但是对cookie没有影响
 
+
+
+#### Session的默认失效时间为30分钟。 
+
 5.单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。
 
 ![img](cookie和session区别.assets/1200652-20171207223151581-969964750.png)
@@ -58,7 +62,7 @@ session的生命周期是间隔的，从创建时，开始计时如在20分钟�
 
 Cookie支持跨域名访问，例如将domain属性设置为“.biaodianfu.com”，则以“.biaodianfu.com”为后缀的一切域名均能够访问该Cookie。跨域名Cookie如今被普遍用在网络中，例如Google、Baidu、Sina等。而Session则不会支持跨域名访问。Session仅在他所在的域名内有效。
 
-仅运用Cookie或者仅运用Session可能完成不了理想的效果。这时应该尝试一下同时运用Cookie与Session。Cookie与Session的搭配运用在实践项目中会完成很多意想不到的效果。
+仅运用Cookie或者仅运用Session可能完成不了理想的效果。这时应该尝试一下同时运用Cookie与Session.cookie与Session的搭配运用在实践项目中会完成很多意想不到的效果。
 
 
 
@@ -71,6 +75,20 @@ Cookie支持跨域名访问，例如将domain属性设置为“.biaodianfu.com�
 跨域的业务需求大概是酱紫：用户在a.com进行了登录，希望在b.com也同步进行了登录。如果是同一个主域比较简单，可以通过setcookie中的domain参数进行设定：例如有x.a.com和xx.a.com，可以通过设置domain为a.com，从而a.com的所有二级域名都可以共享这一个cookie。基于安全方面的原因，在a.com下面设置domain为b.com是无效的。
 
 那么是否真的没有办法可以实现这个了呢？这个还是有一些奇巧淫技的，这里介绍一种使用内框iframe的方法。
+
+
+
+##### 什么是一级域名？
+
+一级域名又称为顶级域名，大家需要注意的是，www.lisp.com这种形式的域名并不是一级域名，它只是一个二级域名，也就是说www只是一个主机名
+
+真正的一级域名是由一个合法的字符串+域名后缀组成，所以，lisp.com这种形式的域名才是一级域名，lisp是域名主体，.com是域名后缀，可以是.net也是域名后缀
+
+##### 什么是二级域名？
+
+所谓的二级域名实际就是一个一级域名下面的主机名，顾名思义，它是在一级域名前面加上一个字符串，比如asdx.lisp.com，它可以拥有与根顶级域名同样的功能，并且通过设置，可以拥有和跟顶级域名完全一样的功能
+
+![img](https://gss0.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=d8ee3d95be7eca80125031e1a113bbe5/7af40ad162d9f2d33dd3bf59a7ec8a136227cc42.jpg)
 
 
 
