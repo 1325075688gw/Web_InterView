@@ -31,6 +31,7 @@
     * [数据库引擎](数据库知识/数据库引擎.md)
     * [数据库索引](数据库知识/数据库索引.md)
     * [数据库视图，存储过程等](数据库知识/数据库视图，存储过程等.md)
+    * [创建索引语句](数据库知识/创建索引语句.md)
 * [MySQL知识](MySQL知识/README.md)
 * [Redis知识](Redis知识/README.md)
     * [Redis 与 Memcached区别](Redis知识/Redis 与 Memcached区别.md)
